@@ -1,0 +1,19 @@
+/* 64em is also 1028px when basefont is 16px */
+@media only screen and (min-width: 64rem) {
+
+    /* Code for the header */
+	header {
+		text-align: center;
+		font-size: 1.5em;
+	}
+
+	/* Code for the navigation */
+	nav {
+		font-size: 1.5em;
+	}
+
+	/* Code for the form */
+	form.label.sbs {
+        padding: 0.4rem 0;
+	}
+}

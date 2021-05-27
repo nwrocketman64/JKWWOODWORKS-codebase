@@ -1,0 +1,194 @@
+body {
+    background-color: #EEE;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.page {
+    max-width: 100%;
+	margin: 0 auto;
+	line-height: 1.8;
+}
+
+/* Code for the header */
+header {
+	height: 170px;
+}
+
+header, footer {
+    background-color: #1a1aff;
+    color: white;
+    padding: 8px;
+}
+
+header h1 {
+	display: inline;
+	text-align: center;
+	font-family: 'Poppins', sans-serif;
+}
+
+header img {
+	float: left;
+	margin-right: 20px;
+	border-radius: 15px;
+}
+
+header p {
+	font-style: italic;
+}
+
+/* Code for the navigation */
+nav {
+	margin: 0 auto;
+	background-color: #1a1aff;
+	margin-top: -1em;
+}
+
+.navigation {
+	list-style: none;
+	padding: 0;
+}
+
+.navigation li:first-child {
+	display: block;
+}
+
+.navigation li {
+	display: none;
+}
+
+.navigation a {
+	display: block;
+	padding: 0.75rem;
+	text-align: left;
+	text-decoration: none;
+	color: white;
+	font-weight: 700;
+}
+
+.navigation a:hover {
+	color: white;
+	background-color: black;
+}
+
+#thePage {
+	font-weight: bold;
+	text-decoration: underline;
+	background-color: #1111b6;
+}
+
+.responsive li {
+	display: block;
+}
+
+/* Code for the main section */
+main {
+	padding: 20px;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+main img {
+	max-width: 100%;
+}
+
+section {
+	border-bottom: #161616 solid 3px;
+	padding-bottom: 20px;
+}
+
+section:last-child {
+	border-color: #EEE;
+}
+
+.button {
+	display: block;
+	margin: 0 auto;
+	width: 200px;
+}
+
+.button:hover {
+	box-shadow: 0 0 50px #333;
+}
+
+/* Code for the input form */
+form fieldset {
+    margin: 2rem 0;
+    border: 1px solid #192f77;
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+
+form legend {
+    color: #192f77;
+    margin: 0 1rem;
+    padding: 0 0.5rem;
+}
+
+form label.top, form div {
+    display: block;
+    padding-top: 1rem;
+    color: #9c2c13;
+    font-size: 0.8rem;
+}
+
+form label.top input, form label.top select {
+    display: block;
+    font-size: 1rem;
+    border: solid 1px #999;
+    border-radius: 4px;
+    padding: 0.75rem;
+    color: #555;
+    width: 100%;
+    max-width: 20rem;
+    background-color: rgba(0,0,0,0.1);
+}
+
+form label.sbs {
+    display: block;
+    padding: 0.75rem 0;
+    color: #555;
+}
+
+form input.submitBtn {
+    border: none;
+    background-color: #9c2c13;
+    color: white;
+    border-radius: 1rem;
+    padding: 0.75rem 1.5rem;
+    margin: 0 0 2rem 2%;
+    width: 96%;
+    max-width: 20rem;
+}
+
+/* Code for the contact card */
+.contact {
+	text-align: center;
+}
+
+.contact h2 {
+	text-align: left;
+}
+
+.contact iframe {
+	margin: 0 auto;
+}
+
+
+
+/* Code for the footer */
+footer {
+	text-align: center;
+}
+
+footer a {
+	color: yellow;
+}
+
+footer a:visited {
+	color: tomato;
+}
+
+footer p:last-child {
+	color: yellow;
+	font-size: 0.8em;
+}

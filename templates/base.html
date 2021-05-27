@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - JKW Wood Works</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/normalize.css">
+    <link rel="stylesheet" href="static/css/small.css">
+    <link rel="stylesheet" href="static/css/medium.css">
+    <link rel="stylesheet" href="static/css/large.css">
+    <link rel="shortcut icon" type="image/x-icon" href="static/img/favicon.ico">
+    <script src = "static/js/menu.js"></script>
+</head>
+<body>
+    <header>
+        <h1>{{ title }} - JKW Wood Works</h1>
+        <nav>
+            <ul class = "navigation">
+                <li><a class="ham" href="#">&#9776; Menu</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/order">Order</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/about">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy;2021 | JKW Wood Works</p>
+    </footer>
+</body>
+</html>
