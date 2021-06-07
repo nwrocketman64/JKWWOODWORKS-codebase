@@ -10,12 +10,17 @@ body {
 }
 
 /* Code for the header */
+/*
 header {
 	height: 170px;
 }
+*/
 
 header, footer {
-    background-color: #1a1aff;
+	
+    background-color: #1a1aff; /* #1a1aff */
+	
+	/*background-image: url("static/img/wood1.jpg");*/
     color: white;
     padding: 8px;
 }
@@ -68,6 +73,7 @@ nav {
 .navigation a:hover {
 	color: white;
 	background-color: black;
+	transition: all 0.63s ease 0s;
 }
 
 #thePage {
@@ -191,4 +197,22 @@ footer a:visited {
 footer p:last-child {
 	color: yellow;
 	font-size: 0.8em;
+}
+
+/* Code for the Contact Us Form section */
+.container {
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
+
+}
+input[type=text], select, textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+	resize: vertical;
 }
