@@ -4,6 +4,7 @@ from flask_session import Session
 
 # Import the controllers.
 from controllers.shop import shop
+from controllers.auth import auth
 
 # Create the applications.
 app = Flask(__name__)
@@ -15,6 +16,7 @@ app.secret_key = "\xd5$\xa2\xd5\xd8\x06\xab\xa4\xb5\x86\xec\xf1Tn[s"
 Session(app)
 
 # Call the shop blueprint.
+app.register_blueprint(auth)
 app.register_blueprint(shop)
 
 # The 404 handler.

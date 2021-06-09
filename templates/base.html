@@ -20,11 +20,11 @@
         <nav>
             <ul class = "navigation">
                 <li><a class="ham" href="#">&#9776; Menu</a></li>
-                <li><a class="nav-link" href="/">Home</a></li>
-                <li><a class="nav-link" href="/products">Products</a></li>
-                <li><a class="nav-link" href="/order">Order</a></li>
-                <li><a class="nav-link" href="/contact">Contact Us</a></li>
-                <li><a class="nav-link" href="/about">About Us</a></li>
+                <li><a class="nav-link" {% if '/home' in path %} id="thePage" {% endif %} href="/">Home</a></li>
+                <li><a class="nav-link" {% if '/products' in path %} id="thePage" {% endif %} href="/products">Products</a></li>
+                <li><a class="nav-link" {% if '/order' in path %} id="thePage" {% endif %} href="/order">Order</a></li>
+                <li><a class="nav-link" {% if '/contact' in path %} id="thePage" {% endif %} href="/contact">Contact Us</a></li>
+                <li><a class="nav-link" {% if '/about' in path %} id="thePage" {% endif %} href="/about">About Us</a></li>
             </ul>
         </nav>
     </header>

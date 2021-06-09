@@ -9,7 +9,8 @@ shop = Blueprint('shop', __name__, template_folder='templates')
 def index():
     # Gather the needed information.
     kmarge = {
-        'title': 'Home'
+        'title': 'Home',
+        'path': '/home'
     }
 
     # Render the page.
@@ -21,7 +22,8 @@ def index():
 def products():
     # Gather the needed information.
     kmarge = {
-        'title': 'Products'
+        'title': 'Products',
+        'path': '/products'
     }
 
     # Render the page.
@@ -33,7 +35,8 @@ def products():
 def order():
     # Gather the needed information.
     kmarge = {
-        'title': 'Order'
+        'title': 'Order',
+        'path': '/order'
     }
 
     # Render the page.
@@ -45,7 +48,8 @@ def order():
 def contact_us():
     # Gather the needed information.
     kmarge = {
-        'title': 'Contact Us'
+        'title': 'Contact Us',
+        'path': '/contact'
     }
 
     # Render the page.
@@ -57,7 +61,8 @@ def contact_us():
 def about_us():
     # Gather the needed information.
     kmarge = {
-        'title': 'About Us'
+        'title': 'About Us',
+        'path': '/about'
     }
 
     # Render the page.
