@@ -1,8 +1,16 @@
 /* 64em is also 1028px when basefont is 16px */
 @media only screen and (min-width: 64rem) {
-
-
-	
+/*
+	.nav-link::after{
+		content: '';
+		display: block;
+		width: 0;
+		height: 2px;
+		background: #fff;
+		transition: width .3s;
+	}
+	*/
+	/*
 	.nav-link::after{
 		content: '';
 		display: block;
@@ -11,7 +19,7 @@
 		background: rgb(252, 252, 252);
 		transition: width .3s;
 	}
-	
+	*/
 	.nav-link:hover::after {
 		width: 100%;
 		transition: width .5s;
