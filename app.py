@@ -24,7 +24,8 @@ app.register_blueprint(shop)
 def not_found(e):
     # Gather the need information.
     kmarge = {
-        'title': 'Page Not Found'
+        'title': 'Page Not Found',
+        'path': '/home'
     }
 
     # Render the page and return the 404 code.
