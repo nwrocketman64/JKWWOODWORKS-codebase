@@ -1,5 +1,6 @@
 # Import the needed libraries.
 from flask import Blueprint, render_template
+import json
 
 # Create the shop blueprint.
 shop = Blueprint('shop', __name__, template_folder='templates')
@@ -20,6 +21,29 @@ def index():
 # The routes gives the list of products.
 @shop.route('/products')
 def products():
+    f = open("data/data.json")
+    data = json.load(f)
+    f.close()
+
+    for item in data:
+        print("title:", item['title'])
+        print('imageUrl:', item['imageUrl'])
+        print('description:', item['description'])
+        print("price: ", item['price'])
+
+    # Gather the needed information.
+    kmarge = {
+        'title': 'Products',
+        'path': '/products',
+        'items': data
+    }
+
+    # Render the page.
+    return render_template('products.html', **kmarge)
+
+
+@shop.route("/product-view/<id>")
+def product_view(id):
     # Gather the needed information.
     kmarge = {
         'title': 'Products',
@@ -27,7 +51,8 @@ def products():
     }
 
     # Render the page.
-    return render_template('products.html', **kmarge)
+    return render_template('product-view.html', **kmarge)
+
 
 # GET /order
 # The routes gives the order form.
