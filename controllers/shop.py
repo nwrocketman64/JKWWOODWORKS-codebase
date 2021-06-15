@@ -25,12 +25,6 @@ def products():
     data = json.load(f)
     f.close()
 
-    for item in data:
-        print("title:", item['title'])
-        print('imageUrl:', item['imageUrl'])
-        print('description:', item['description'])
-        print("price: ", item['price'])
-
     # Gather the needed information.
     kmarge = {
         'title': 'Products',
@@ -44,10 +38,19 @@ def products():
 
 @shop.route("/product-view/<id>")
 def product_view(id):
+    f = open("data/data.json")
+    data = json.load(f)
+    f.close()
+
+    product = 0
+    for item in data:
+        if item['id'] == id:
+            product = item
     # Gather the needed information.
     kmarge = {
         'title': 'Products',
-        'path': '/products'
+        'path': '/products',
+        'item': product
     }
 
     # Render the page.

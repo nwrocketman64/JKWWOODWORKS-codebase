@@ -10,6 +10,7 @@
                 <h4>{{ item.title }}</h4>
                 <p>Price: {{ item.price }}</p>
                 <p>Description: {{ item.description }}</p>
+                <p><a href="/product-view/{{ item.id }}">Details</a></p>
             </div>
         {% endfor %}
         </div>

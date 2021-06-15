@@ -7,12 +7,12 @@
     <title>{{ title }} - JKW Wood Works</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&family=Quicksand&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="static/css/normalize.css">
-    <link rel="stylesheet" href="static/css/small.css">
-    <link rel="stylesheet" href="static/css/medium.css">
-    <link rel="stylesheet" href="static/css/large.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/small.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/medium.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/large.css') }}">
     <link rel="shortcut icon" type="image/x-icon" href="static/img/favicon.ico">
-    <script src = "static/js/menu.js"></script>
+    <script src = "{{ url_for('static', filename = 'js/menu.js') }}"></script>
 </head>
 <body>
     <header>

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section>
+        <h2>{{ item.title }}</h2>
+        <img src="{{ item.imageUrl }}" alt="item.title">
+        <p>Price: {{ item.price }}</p>
+        <p>Description: {{ item.description }}</p>
+    </section>
+{% endblock %}
