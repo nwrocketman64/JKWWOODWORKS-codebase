@@ -1,9 +1,12 @@
 # Import the needed libraries.
 from flask import Blueprint, render_template
-import json
+from bson.objectid import ObjectId
 
 # Create the shop blueprint.
 shop = Blueprint('shop', __name__, template_folder='templates')
+
+# Import the database.
+from app import products_db
 
 # GET / aka the homepage.
 @shop.route('/')
@@ -21,15 +24,24 @@ def index():
 # The routes gives the list of products.
 @shop.route('/products')
 def products():
-    f = open("data/data.json")
-    data = json.load(f)
-    f.close()
+    # Connect to the database and get all the products.
+    products = []
+    data = products_db.find()
+    for product in data:
+        output = {
+            'id': str(product['_id']),
+            'title': product['title'],
+            'imageUrl': product['imageUrl'],
+            'description': product['description'],
+            'price': product['price']
+        }
+        products.append(output)
 
     # Gather the needed information.
     kmarge = {
         'title': 'Products',
         'path': '/products',
-        'items': data
+        'items': products
     }
 
     # Render the page.
@@ -38,19 +50,24 @@ def products():
 
 @shop.route("/product-view/<id>")
 def product_view(id):
-    f = open("data/data.json")
-    data = json.load(f)
-    f.close()
+    # Connect to the database and get the product with the right id.
+    products = []
+    data = products_db.find({'_id': ObjectId(id)})
+    for product in data:
+        output = {
+            'id': str(product['_id']),
+            'title': product['title'],
+            'imageUrl': product['imageUrl'],
+            'description': product['description'],
+            'price': product['price']
+        }
+        products = output
 
-    product = 0
-    for item in data:
-        if item['id'] == id:
-            product = item
     # Gather the needed information.
     kmarge = {
         'title': 'Products',
         'path': '/products',
-        'item': product
+        'item': products
     }
 
     # Render the page.

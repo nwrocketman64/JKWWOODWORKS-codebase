@@ -1,6 +1,7 @@
 # Import the needed libraries.
 from flask import Flask, render_template
 from flask_session import Session
+from flask_pymongo import PyMongo
 
 # Import the controllers.
 from controllers.shop import shop
@@ -8,6 +9,13 @@ from controllers.auth import auth
 
 # Create the applications.
 app = Flask(__name__)
+
+# Create the database connection.
+app.config["MONGO_URI"] = "mongodb://client:altosax12@cluster0-shard-00-00.o3xao.mongodb.net:27017,cluster0-shard-00-01.o3xao.mongodb.net:27017,cluster0-shard-00-02.o3xao.mongodb.net:27017/shop?ssl=true&replicaSet=atlas-10dcip-shard-0&authSource=admin&retryWrites=true&w=majority"
+mongo = PyMongo(app)
+
+# Get the shop collection.
+products_db = mongo.db.products
 
 # Configure the sessions in the web app.
 app.config["SESSION_PERMANENT"] = False
