@@ -3,6 +3,9 @@
 {% block content %}
     <section>
         <h2>The Latest Product</h2>
+        <h4>{{ product.title }}</h4>
+        <img src="{{ product.imageUrl }}" alt="{{ product.title }}">
+        <p><a href="/product-view/{{ product.id }}">Click here to see more details</a></p>
     </section>
     <section>
         <h2>Site Navigation</h2>
@@ -12,8 +15,19 @@
         </p>
         <ul>
             <li>
-                <a href="#">Products:</a> See the complete list of
+                <a href="/products">Products:</a> See the complete list of
                 woods products that being offered.
+            </li>
+            <li>
+                <a href="/order">Order:</a> Go here to download the form
+                to fill out an order.
+            </li>
+            <li>
+                <a href="/contact">Contact:</a> Go here to see us some feedback
+                either on this website or the products sold here.
+            </li>
+            <li>
+                <a href="/about">About:</a> More information about us.
             </li>
         </ul>
     </section>

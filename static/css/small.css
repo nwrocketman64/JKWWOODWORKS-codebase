@@ -9,13 +9,20 @@ body {
 	line-height: 1.8;
 }
 
-header, footer {
-	
-    background-color: #1a1aff; /* #1a1aff */
+header{
+    /*background-color: #1a1aff; /* #1a1aff */
 	
 	/*background-image: url("static/img/wood1.jpg");*/
     color: white;
     padding: 8px;
+}
+
+footer{
+	background: #423b35;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 header h1 {
@@ -25,7 +32,6 @@ header h1 {
 }
 
 header img {
-	float: left;
 	margin-right: 20px;
 	border-radius: 15px;
 }
@@ -37,7 +43,7 @@ header p {
 /* Code for the navigation */
 nav {
 	margin: 0 auto;
-	background-color: #1a1aff;
+	background: #423b35;
 	margin-top: -1em;
 }
 
@@ -71,7 +77,9 @@ nav {
 
 #thePage {
 	font-weight: bold;
-	background-color: #1111b6;
+	/*background-color: #c9a505;*/
+	color: gold;
+	
 }
 
 .responsive li {
@@ -179,7 +187,7 @@ footer {
 }
 
 footer a {
-	color: yellow;
+	color: white;
 }
 
 footer a:visited {
@@ -187,7 +195,7 @@ footer a:visited {
 }
 
 footer p:last-child {
-	color: yellow;
+	color: white;
 	font-size: 0.8em;
 }
 

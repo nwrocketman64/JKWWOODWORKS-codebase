@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <section>
-        <h2>{{ item.title }}</h2>
+    <section class="productViewCont">
         <img src="{{ item.imageUrl }}" alt="item.title">
-        <p>Price: {{ item.price }}</p>
-        <p>Description: {{ item.description }}</p>
+        <div class=productView>
+            <h2 class="productViewInfo">{{ item.title }}</h2>
+            <p class="productViewInfo">Price: ${{ item.price }}.00</p>
+            <p class="productViewInfo">Description: {{ item.description }}</p>
+        </div>
     </section>
 {% endblock %}

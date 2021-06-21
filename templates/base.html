@@ -16,8 +16,12 @@
 </head>
 <body>
     <header>
-        <h1>{{ title }} - JKW Wood Works</h1>
+        <!--<h1>{{ title }} - JKW Wood Works</h1>-->
+        <!--<img id="logo" src="/static/img/logo.jpg" alt="logo">-->
         <nav>
+            <div class="logo">
+                <h4>{{ title }} - JKW Wood Works</h4>
+            </div>
             <ul class = "navigation">
                 <li><a class="ham" href="#">&#9776; Menu</a></li>
                 <li><a class="nav-link" {% if '/home' in path %} id="thePage" {% endif %} href="/">Home</a></li>

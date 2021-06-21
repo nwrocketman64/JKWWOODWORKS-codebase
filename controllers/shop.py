@@ -11,10 +11,24 @@ from app import products_db
 # GET / aka the homepage.
 @shop.route('/')
 def index():
+    # Connect to the database and get the product with the right id.
+    products = []
+    data = products_db.find()
+    for product in data:
+        output = {
+            'id': str(product['_id']),
+            'title': product['title'],
+            'imageUrl': product['imageUrl'],
+            'description': product['description'],
+            'price': product['price']
+        }
+        products = output
+
     # Gather the needed information.
     kmarge = {
         'title': 'Home',
-        'path': '/home'
+        'path': '/home',
+        'product': products
     }
 
     # Render the page.
@@ -65,7 +79,7 @@ def product_view(id):
 
     # Gather the needed information.
     kmarge = {
-        'title': 'Products',
+        'title': products['title'],
         'path': '/products',
         'item': products
     }
