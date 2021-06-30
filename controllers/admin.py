@@ -133,9 +133,21 @@ def edit_product(id):
 @admin.route('/admin/delete-product/<id>', methods = ['POST', 'GET'])
 def delete_product(id):
     if request.method == 'POST':
-        pass
+        product_id = request.form["id"]
+        Products.delete_product(product_id)
+        return redirect('/admin')
     else:
-        pass
+        # Gather the needed information.
+        product = Products.get_product(id)
+        kmarge = {
+            'title': 'Delete Product - ' + product['title'],
+            'path': '/home',
+            'productTitle': product['title'],
+            'id': id
+        }
+
+        # Render the page.
+        return render_template('delete-product.html', **kmarge)
 
 # GET /admin
 @admin.route('/admin')

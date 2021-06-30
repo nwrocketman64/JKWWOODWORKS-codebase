@@ -26,8 +26,8 @@ class Products:
         result = products_db.update_one(filter, values)
         return result
 
-    def delete_product():
-        pass
+    def delete_product(id):
+        products_db.delete_one({'_id': ObjectId(id)})
 
     def get_product(id):
         products = []

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section>
+        <h2>Confirm to Delete Product - {{ productTitle }}</h2>
+        <p>
+            Are you sure you want to delete the product, {{ productTitle }}?
+        </p>
+        <form action="/admin/delete-product/yes" method="POST">
+            <input type="hidden" name="id" value="{{ id }}">
+            <input type="submit" value="Yes">
+        </form>
+        <form action="/admin" method="GET">
+            <input type="submit" value="No">
+        </form>
+    </section>
+{% endblock %}
