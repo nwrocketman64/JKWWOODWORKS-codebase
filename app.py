@@ -2,6 +2,7 @@
 from flask import Flask, render_template
 from flask_session import Session
 from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
 
 # Create the applications.
 app = Flask(__name__)
@@ -11,18 +12,67 @@ app.config["MONGO_URI"] = "mongodb://client:altosax12@cluster0-shard-00-00.o3xao
 mongo = PyMongo(app)
 
 # Get the shop collection.
-products_db = mongo.db.products
 user_db = mongo.db.user
+products_db = mongo.db.products
+
+class Products:
+    def add_product(product):
+        result = products_db.insert_one(product)
+        return result
+
+    def update_product(id, product):
+        filter = {'_id': ObjectId(id)}
+        values = {'$set': product}
+        result = products_db.update_one(filter, values)
+        return result
+
+    def delete_product():
+        pass
+
+    def get_product(id):
+        products = []
+        data = products_db.find({'_id': ObjectId(id)})
+        for product in data:
+            output = {
+                'id': str(product['_id']),
+                'title': product['title'],
+                'imageUrl': product['imageUrl'],
+                'description': product['description'],
+                'options': product['options'],
+                'price': product['price']
+            }
+            products = output
+        
+        return products
+
+    def get_products():
+        products = []
+        data = products_db.find()
+        for product in data:
+            output = {
+                'id': str(product['_id']),
+                'title': product['title'],
+                'imageUrl': product['imageUrl'],
+                'description': product['description'],
+                'options': product['options'],
+                'price': product['price']
+            }
+            products.append(output)
+
+        return products
 
 # Configure the sessions in the web app.
+# with app.app_context():
+#     app.session_interface = MongoDBSessionInterface(app, mongo.db, 'sessions')
 app.config["SESSION_PERMANENT"] = False
-app.config["SESSION_TYPE"] = "filesystem"
+app.config["SESSION_TYPE"] = "mongodb"
+app.config["SESSION_MONGODB_DB"] = "shop"
 app.secret_key = "\xd5$\xa2\xd5\xd8\x06\xab\xa4\xb5\x86\xec\xf1Tn[s"
 Session(app)
 
 # Import the controllers.
-from controllers.shop import shop
 from controllers.admin import admin
+from controllers.shop import shop
 from controllers.auth import auth
 
 # Call the shop blueprint.

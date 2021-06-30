@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section>
+        <h2>Update the Product Details</h2>
+        <form action="/admin/edit-product/{{ id }}" method="POST">
+            <label for="name">Name: </label>
+            <input type="text" name="name" id="name" value="{% if productTitle is defined %}{{ productTitle }}{% endif %}">
+            <label for="price">Starting Price: </label>
+            <input type="number" step="0.01" name="price" id="price" value="{% if price is defined %}{{ price }}{% endif %}">
+            <label for="imageUrl">Image: </label>
+            <input type="text" name="imageUrl" id="imageUrl" value="{% if imageUrl is defined %}{{ imageUrl }}{% endif %}">
+            <label for="options">Options: </label>
+            <textarea name="options" id="options">{% if options is defined %}{{ options }}{% endif %}</textarea>
+            <label for="description">Description: </label>
+            <textarea name="description" id="description">{% if description is defined %}{{ description }}{% endif %}</textarea>
+            <button type="submit">Edit Product</button>
+        </form>
+    </section>
+{% endblock %}

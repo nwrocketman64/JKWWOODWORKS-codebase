@@ -1,34 +1,23 @@
 # Import the needed libraries.
-from flask import Blueprint, render_template
-from bson.objectid import ObjectId
+from flask import Blueprint, render_template, session
 
 # Create the shop blueprint.
 shop = Blueprint('shop', __name__, template_folder='templates')
 
 # Import the database.
-from app import products_db
+from app import Products
 
 # GET / aka the homepage.
 @shop.route('/')
 def index():
     # Connect to the database and get the product with the right id.
-    products = []
-    data = products_db.find()
-    for product in data:
-        output = {
-            'id': str(product['_id']),
-            'title': product['title'],
-            'imageUrl': product['imageUrl'],
-            'description': product['description'],
-            'price': product['price']
-        }
-        products = output
+    products = Products.get_products()
 
     # Gather the needed information.
     kmarge = {
         'title': 'Home',
         'path': '/home',
-        'product': products
+        'product': products[len(products) - 1]
     }
 
     # Render the page.
@@ -39,17 +28,7 @@ def index():
 @shop.route('/products')
 def products():
     # Connect to the database and get all the products.
-    products = []
-    data = products_db.find()
-    for product in data:
-        output = {
-            'id': str(product['_id']),
-            'title': product['title'],
-            'imageUrl': product['imageUrl'],
-            'description': product['description'],
-            'price': product['price']
-        }
-        products.append(output)
+    products = Products.get_products()
 
     # Gather the needed information.
     kmarge = {
@@ -65,23 +44,13 @@ def products():
 @shop.route("/product-view/<id>")
 def product_view(id):
     # Connect to the database and get the product with the right id.
-    products = []
-    data = products_db.find({'_id': ObjectId(id)})
-    for product in data:
-        output = {
-            'id': str(product['_id']),
-            'title': product['title'],
-            'imageUrl': product['imageUrl'],
-            'description': product['description'],
-            'price': product['price']
-        }
-        products = output
+    product = Products.get_product(id)
 
     # Gather the needed information.
     kmarge = {
-        'title': products['title'],
+        'title': product['title'],
         'path': '/products',
-        'item': products
+        'item': product
     }
 
     # Render the page.

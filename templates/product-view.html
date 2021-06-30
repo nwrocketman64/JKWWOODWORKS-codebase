@@ -2,7 +2,7 @@
 
 {% block content %}
     <section class="productViewCont">
-        <img src="{{ item.imageUrl }}" alt="item.title">
+        <img src="{{ item.imageUrl }}" alt="{{ item.title }}">
         <div class=productView>
             <h2 class="productViewInfo">{{ item.title }}</h2>
             <p class="productViewInfo">Price: ${{ item.price }}.00</p>
