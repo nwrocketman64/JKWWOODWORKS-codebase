@@ -61,6 +61,20 @@ class Products:
 
         return products
 
+class User:
+    def get_user():
+        users = []
+        data = user_db.find()
+        for user in data:
+            output = {
+                'id': str(user['_id']),
+                'username': user['username'],
+                'password': user['password']
+            }
+            users = output
+        
+        return users
+
 # Configure the sessions in the web app.
 # with app.app_context():
 #     app.session_interface = MongoDBSessionInterface(app, mongo.db, 'sessions')

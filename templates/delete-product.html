@@ -6,6 +6,7 @@
         <p>
             Are you sure you want to delete the product, {{ productTitle }}?
         </p>
+        <div class="selection">
         <form action="/admin/delete-product/yes" method="POST">
             <input type="hidden" name="id" value="{{ id }}">
             <input type="submit" value="Yes">
@@ -13,5 +14,6 @@
         <form action="/admin" method="GET">
             <input type="submit" value="No">
         </form>
+        </div>
     </section>
 {% endblock %}

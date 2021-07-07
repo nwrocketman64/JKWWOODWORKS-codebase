@@ -56,20 +56,6 @@ def product_view(id):
     # Render the page.
     return render_template('product-view.html', **kmarge)
 
-
-# GET /order
-# The routes gives the order form.
-@shop.route('/order')
-def order():
-    # Gather the needed information.
-    kmarge = {
-        'title': 'Order',
-        'path': '/order'
-    }
-
-    # Render the page.
-    return render_template('order.html', **kmarge)
-
 # GET /contact
 # The route gives the contact form.
 @shop.route('/contact')

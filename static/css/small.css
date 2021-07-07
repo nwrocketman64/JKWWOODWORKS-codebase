@@ -23,6 +23,11 @@ footer{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	color: white;
+}
+
+footer img{
+	padding-left: 15px;
 }
 
 header h1 {
@@ -206,7 +211,7 @@ footer p:last-child {
 	padding: 20px;
 
 }
-input[type=text], select, textarea {
+input[type=text], input[type=number], select, textarea {
 	width: 100%;
 	padding: 12px;
 	border: 1px solid #ccc;
@@ -215,4 +220,20 @@ input[type=text], select, textarea {
 	margin-top: 6px;
 	margin-bottom: 16px;
 	resize: vertical;
+}
+
+
+/* Code for Delete product - admin page */
+.selection{
+	display: flex;
+}
+
+.selection input{
+	padding: 8px;
+	width: 100px;
+	margin:3px;
+}
+
+section li{
+	padding: 3px;
 }
