@@ -78,9 +78,15 @@ class User:
 # Configure the sessions in the web app.
 # with app.app_context():
 #     app.session_interface = MongoDBSessionInterface(app, mongo.db, 'sessions')
+# app.config["SESSION_PERMANENT"] = False
+# app.config["SESSION_TYPE"] = "mongodb"
+# app.config["SESSION_MONGODB_DB"] = "shop"
+# app.secret_key = "\xd5$\xa2\xd5\xd8\x06\xab\xa4\xb5\x86\xec\xf1Tn[s"
+# Session(app)
+
+# Configure the sessions in the web app.
 app.config["SESSION_PERMANENT"] = False
-app.config["SESSION_TYPE"] = "mongodb"
-app.config["SESSION_MONGODB_DB"] = "shop"
+app.config["SESSION_TYPE"] = "filesystem"
 app.secret_key = "\xd5$\xa2\xd5\xd8\x06\xab\xa4\xb5\x86\xec\xf1Tn[s"
 Session(app)
 

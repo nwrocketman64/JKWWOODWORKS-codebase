@@ -6,7 +6,8 @@
         <div class=productView>
             <h2 class="productViewInfo">{{ item.title }}</h2>
             <p class="productViewInfo">Price: ${{ item.price }}</p>
-            <p class="productViewInfo">Description: {{ item.description }}</p>
+            <p class="productViewInfo">Description:<br> {{ item.description }}</p>
+            <p class="productViewInfo">Options:<br> {{ item.options }}</p>
         </div>
     </section>
 {% endblock %}
